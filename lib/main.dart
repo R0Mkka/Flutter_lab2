@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/my-web-view.dart';
 import 'package:lab2/widgets/new-transaction.dart';
 
 import './widgets/transaction-list.dart';
@@ -91,7 +92,20 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () => _startAddNewTransaction(context),
-          )
+          ),
+          IconButton(
+            icon: Icon(Icons.school),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => MyWebView(
+                    title: 'Udemy',
+                    selectedUrl: 'https://www.udemy.com/',
+                  ),
+                ),
+              );
+            },
+          ),
         ],
       ),
       body: SingleChildScrollView(
